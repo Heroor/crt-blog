@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      min-width: 900px;
+      max-width: 1800px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-family: "IBM Plex Mono";
+      background: #141318;
+      color: #2ff828;
+      text-shadow: 0 0 3px #2ff8283d, 0 0 5px #2ff82833, 0 0 15px #2ff8281f;
+    }
+
+    body:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      pointer-events: none;
+      width: 100%;
+      height: 100vh;
+      background: repeating-linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.1) 0px,
+          rgba(0, 0, 0, 0.1) 2px,
+          rgba(255, 255, 255, 0.1) 4px);
+      filter: blur(0.4px);
+    }
+
+    ::selection {
+      background-color: #2ff828;
+      color: #141318;
+    }
+
+    ::-moz-selection {
+      background-color: #2ff828;
+      color: #141318;
+    }
+
+    a {
+      color: #2ff828;
+      text-decoration: none;
+      transition: transform 0.1s;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+      text-shadow: 0px 0px 10px #2ff828aa;
+    }
+
+    a:active {
+      transform: translate(1px, 1px);
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      margin: 0 50px;
+      padding-top: 30px;
+      font-family: Oswald;
+    }
+
+    ul {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      line-height: 32px;
+      text-align: center;
+      font-size: 22px;
+      padding: 0;
+      padding-left: 10px;
+      margin: 0;
+      user-select: none;
+      border-bottom: 3px solid currentColor;
+    }
+
+    li {
+      position: relative;
+      cursor: pointer;
+      padding: 0 15px;
+    }
+
+    li div {
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    li.active div:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      background: #141318;
+      border: 3px solid currentColor;
+      border-bottom: none;
+      will-change: left, right;
+      animation: active 0.2s ease-in-out forwards;
+      pointer-events: none;
+    }
+
+    li .label {
+      display: inline-block;
+      background: #141318;
+      position: relative;
+      padding: 0 8px;
+    }
+
+    li .label-text {
+      display: inline-block;
+      transition: .05s;
+      text-decoration: none;
+    }
+
+    li:active .label-text {
+      transform: translate(1px, 1px);
+    }
+
+    .time {
+      position: absolute;
+      top: 30px;
+      left: 0px;
+      font-size: 22px;
+      line-height: 32px;
+      font-family: VT323;
+      white-space: nowrap;
+    }
+
+    .links {
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      font-size: 20px;
+      line-height: 32px;
+      font-family: VT323;
+      white-space: nowrap;
+    }
+
+    .links a {
+      display: inline-block;
+    }
+
+    .content {
+      margin: 30px 50px;
+      mask-image: linear-gradient(to bottom, transparent, #000000 12px, #000000 calc(100% - 12px), transparent);
+    }
+
+    .content-inner {
+      box-sizing: border-box;
+      min-height: calc(100vh - 150px);
+      padding: 30px 50px;
+      background-color: #013c08;
+      mask-image: linear-gradient(to right, transparent, #000000 12px, #000000 calc(100% - 12px), transparent);
+    }
+
+    .content-inner *:last-child:after {
+      content: '';
+      display: inline-block;
+      width: 0.5em;
+      height: 1em;
+      background: #2ff828;
+      animation: blink 1s infinite;
+      user-select: none;
+    }
+
+    .content-inner p:before {
+      content: '> ';
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes active {
+      from {
+        left: -8px;
+        right: -8px;
+      }
+
+      to {
+        left: 0;
+        right: 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="tv-screen">
+  <div>
+    <header>
+      <div class="time">--:--:--</div>
+      <ul>
+        <li class="active">
+          <div><span class="label"><a class="label-text">HOME</a></span></div>
+        </li>
+        <li>
+          <div><span class="label"><a class="label-text">BLOG</a></span></div>
+        </li>
+        <li>
+          <div><span class="label"><a class="label-text">PROJECTS</a></span></div>
+        </li>
+        <li>
+          <div><span class="label"><a class="label-text">ABOUT</a></span></div>
+        </li>
+      </ul>
+      <div class="links">
+        <a href="https://x.com/BenerHero" target="_blank">Twitter</a>
+        <a href="https://github.com/Heroor" target="_blank">GitHub</a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="content-inner">
+        <h1># HOME</h1>
+        <p>Hi! I'm Bener, an Indie Developer.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const lis = document.querySelectorAll('li');
+    lis.forEach(li => {
+      li.addEventListener('click', () => {
+        lis.forEach(li => li.classList.remove('active'));
+        li.classList.add('active');
+      });
+    });
+
+    const time = document.querySelector('.time');
+    setInterval(() => {
+      time.textContent = new Date().toLocaleTimeString();
+    }, 1000);
+  </script>
+</body>
+
+</html>
