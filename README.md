@@ -8,6 +8,8 @@
 
 Welcome to CRT BLOG!
 
+https://heroor.github.io/crt-blog
+
 This is a retro CRT terminal-style personal website template that recreates the visual aesthetics of 1980s computer interfaces. The entire page features green phosphor text, scanline effects, and pixelated fonts, creating an atmosphere that blends hacker culture with geek spirit.
 
 ![display](https://github.com/user-attachments/assets/b8177da6-c3dc-4bad-bb0d-4a761180bc6b)
