@@ -19,3 +19,5 @@ Interface Features:
 - Retro Terminal Style – Green phosphor text on a black background, reviving the unique charm of old computer displays.
 - CRT Screen Simulation – Implements scanline effects, making the screen appear as if viewed through a vintage monitor.
 - Minimalist Interaction – Retains only essential information, emphasizing content while embracing the simplicity of geek culture.
+
+© 2025-present Bener. MIT License.
