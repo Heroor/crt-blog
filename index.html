@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://img.pxfe.top/v2/O5E8JeM.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Oswald:wght@200..700&family=VT323&display=swap"
+    rel="stylesheet">
   <style>
     body {
       min-width: 900px;
@@ -60,6 +65,10 @@
       transform: translate(1px, 1px);
     }
 
+    ul {
+      list-style: square;
+    }
+
     header {
       position: relative;
       overflow: hidden;
@@ -70,12 +79,13 @@
       font-size: 22px;
     }
 
-    ul {
+    header ul {
       flex: 1;
       display: flex;
       justify-content: center;
       list-style: none;
       font-family: Oswald;
+      font-weight: bold;
       padding: 0;
       padding-left: 10px;
       margin: 0;
@@ -83,19 +93,19 @@
       border-bottom: 3px solid currentColor;
     }
 
-    li {
+    header li {
       position: relative;
       cursor: pointer;
       padding: 0 15px;
     }
 
-    li div {
+    header li div {
       position: relative;
       display: inline-block;
       padding: 0 10px;
     }
 
-    li.active div:before {
+    header li.active div:before {
       position: absolute;
       content: '';
       top: 50%;
@@ -110,38 +120,38 @@
       pointer-events: none;
     }
 
-    li .label {
+    header li .label {
       display: inline-block;
       background: #141318;
       position: relative;
       padding: 0 8px;
     }
 
-    li .label-text {
+    header li .label-text {
       display: inline-block;
       transition: .05s;
       text-decoration: none;
     }
 
-    li:active .label-text {
+    header li:active .label-text {
       transform: translate(1px, 1px);
     }
 
-    .time {
+    header .time {
       position: absolute;
       top: 30px;
       left: 0px;
       white-space: nowrap;
     }
 
-    .links {
+    header .links {
       position: absolute;
       top: 30px;
       right: 0px;
       white-space: nowrap;
     }
 
-    .links a {
+    header .links a {
       display: inline-block;
     }
 
@@ -155,21 +165,13 @@
       min-height: calc(100vh - 200px);
       padding: 30px 50px;
       background-color: #013c08;
+      line-height: 1.5;
       mask-image: linear-gradient(to right, transparent, #000000 12px, #000000 calc(100% - 12px), transparent);
-    }
-
-    .content-inner *:last-child:after {
-      content: '';
-      display: inline-block;
-      width: 0.5em;
-      height: 1em;
-      background: currentColor;
-      animation: blink 1s infinite;
-      user-select: none;
     }
 
     .content-inner p:before {
       content: '> ';
+      font-size: 14px;
     }
 
     footer {
@@ -177,7 +179,7 @@
       justify-content: center;
       align-items: center;
       gap: 6px;
-      font-size: 20px;
+      font-size: 22px;
       font-family: VT323;
       padding: 20px 0;
       margin: 0 50px;
@@ -185,9 +187,19 @@
     }
 
     footer svg {
-      width: 1em;
-      height: 1em;
-      margin-top: -1px;
+      width: 1.2em;
+      height: 1.2em;
+      margin-left: -3px;
+    }
+
+    .typing {
+      display: inline-block;
+      width: 0.5em;
+      height: 1.2rem;
+      background: currentColor;
+      user-select: none;
+      vertical-align: -2px;
+      animation: blink 1s infinite;
     }
 
     @keyframes blink {
@@ -217,7 +229,7 @@
   </style>
 </head>
 
-<body class="tv-screen">
+<body>
   <div>
     <header>
       <div class="time">--:--:--</div>
@@ -243,47 +255,44 @@
 
     <div class="content">
       <div class="content-inner">
-        <h1># HOME</h1>
-        <p>Hi! I'm Bener, an Indie Developer.</p>
+        <h1># CRT_BLOG</h1>
+        <p>Welcome to CRT-BLOG!</p>
+        <p>
+          This is a retro CRT terminal-style personal website template that recreates the visual aesthetics of 1980s
+          computer interfaces. The entire page features green phosphor text, scanline effects, and pixelated fonts,
+          creating an atmosphere that blends hacker culture with geek spirit.
+        </p>
+        <p>
+          Interface Features:
+        </p>
+        <ul>
+          <li>Retro Terminal Style – Green phosphor text on a black background, reviving the unique charm of old
+            computer
+            displays.</li>
+          <li>CRT Screen Simulation – Implements scanline effects, making the screen appear as if viewed through a
+            vintage monitor.</li>
+          <li>Minimalist Interaction – Retains only essential information, emphasizing content while embracing the
+            simplicity of geek culture.</li>
+        </ul>
+        <p>GitHub:
+          <a href="https://github.com/Heroor/crt-blog" target="_blank">https://github.com/Heroor/crt-blog</a>
+        </p>
       </div>
     </div>
   </div>
   <footer>
-    <a href="https://github.com/Heroor/crt-blog">
+    <a href="https://github.com/Heroor/crt-blog" target="_blank">
       CRT-BLOG
     </a>
-    ·
-    <svg viewBox="0 0 34 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd"
-        d="M26 25H25V26H23V27H22V33H21V34H18V33H17V30H16V28H13V27H10V28H9V29H8V30H6V31H4V30H3V28H4V26H5V24H6V22H7V21H6V20H5V14H6V8H9V9H10V10H14V8H15V7H18V8H19V10H20V12H21V8H22V4H23V2H26V13H27V14H28V16H29V18H30V22H31V25H32V30H31V31H29V30H28V28H27V26H26V25ZM8 17V14H9V17H8ZM13 14V17H14V14H13Z">
-        <animate attributeName="fill" dur="1s" values="transparent" />
-      </path>
+    -
+    <svg viewBox="0 0 400 400" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M27 2H23V1H27V2ZM22 4V2H23V4H22ZM21 8V4H22V8H21ZM19 8H21V12H20V10H19V8ZM18 7H19V8H18V7ZM15 7V6H16V5H17V6H18V7H15ZM15 7H14V8H13V9H10V8H9V7H8V6H7V7H6V8H5V14H4V20H5V21H6V22H5V24H4V26H3V28H2V30H3V31H4V32H6V31H8V30H9V29H10V28H13V27H10V28H9V29H8V30H6V31H4V30H3V28H4V26H5V24H6V22H7V21H6V20H5V14H6V8H9V9H10V10H14V8H15V7Z"
-        fill-opacity="0.5">
-        <animate attributeName="fill" dur="0.7s" values="transparent" />
-      </path>
-      <path
-        d="M26 13V2H27V13H26ZM28 14H27V13H28V14ZM29 16H28V14H29V16ZM30 18H29V16H30V18ZM31 22H30V18H31V22ZM32 25H31V22H32V25ZM32 30V25H33V30H32ZM31 31V30H32V31H31ZM29 31H31V32H29V31ZM28 30H29V31H28V30ZM28 30V28H27V26H26V25H25V26H23V27H22V33H21V34H18V33H17V30H16V28H15V30H16V33H17V34H18V35H21V34H22V33H23V27H25V26H26V28H27V30H28Z"
-        fill-opacity="0.5">
-        <animate attributeName="fill" dur="0.46s" values="transparent" />
-      </path>
-      <path
-        d="M23 0H25V1H23V0ZM22 2V1H23V2H22ZM21 4V2H22V4H21ZM21 4H20V8H21V4ZM15 6V5H16V6H15ZM14 7V6H15V7H14ZM13 8V7H14V8H13ZM13 8H12V9H13V8ZM6 7V6H7V7H6ZM5 8V7H6V8H5ZM4 14V8H5V14H4ZM4 20H3V14H4V20ZM5 21H4V20H5V21ZM5 22V21H6V22H5ZM4 24V22H5V24H4ZM3 26V24H4V26H3ZM2 28V26H3V28H2ZM2 30H1V28H2V30ZM3 31H2V30H3V31ZM4 32H3V31H4V32ZM4 32V33H5V32H4ZM25 28V26H26V28H25ZM27 30H26V28H27V30ZM28 31H27V30H28V31ZM29 32H28V31H29V32ZM29 32V33H30V32H29ZM12 29V28H14V29H12ZM15 30H14V28H15V30ZM16 33H15V30H16V33ZM17 34H16V33H17V34ZM18 35H17V34H18V35ZM18 35V36H20V35H18Z"
-        fill-opacity="0.3">
-        <animate attributeName="fill" dur="0.28s" values="transparent" />
-      </path>
-      <path
-        d="M27 13V2H28V13H27ZM29 14H28V13H29V14ZM30 16H29V14H30V16ZM31 18H30V16H31V18ZM32 22H31V18H32V22ZM33 25H32V22H33V25ZM33 30V25H34V30H33ZM32 31V30H33V31H32ZM31 32V31H32V32H31ZM31 32H30V33H31V32ZM17 5H18V6H17V5ZM19 7H18V6H19V7ZM19 7V8H20V7H19ZM8 6H9V7H8V6ZM9 7H10V8H9V7ZM10 8H12V9H10V8ZM24 33H23V27H25V28H24V33ZM22 34V33H23V34H22ZM21 35V34H22V35H21ZM21 35H20V36H21V35ZM10 28H12V29H10V28ZM9 30V29H10V30H9ZM8 31V30H9V31H8ZM6 32V31H8V32H6ZM6 32H5V33H6V32Z"
-        fill-opacity="0.3">
-        <animate attributeName="fill" dur="0.16s" values="transparent" />
-      </path>
-      <path
-        d="M25 1V0H26V1H25ZM20 4V3H21V4H20ZM3 14V9H4V14H3ZM2 21V15H3V20H4V21H5V22H3V21H2ZM3 24V23H4V24H3ZM2 26V25H3V26H2ZM1 28V27H2V28H1ZM25 29H24V28H26V30H27V31H28V32H26V31H25V29ZM0 31V29H1V30H2V31H3V32H1V31H0ZM14 31H13V29H14V30H15V33H16V34H17V35H15V34H14V31Z"
-        fill-opacity="0.2">
-        <animate attributeName="fill" dur="0.1s" values="transparent" />
-      </path>
+        d="M100 60H80V140H70V200H50V140H60V40L100 40V50H120V70H200V60H220V50H260V210H250V230H230V210H240V70H220V80H200V90H110V70H100V60ZM270 250H250V230H270V250ZM330 310V180H310V210H320V290H300V300H280V280H270V250H290V280H300V210H290V170H310V160H340V180H350V310H330ZM270 340V320H310V310H330V330H310V340H270ZM270 340H210V290H190V340H160V300H140V340H110V220H90V200H70V220H90V360H270V340ZM110 160V140H130V180H90V160H110ZM180 160V140H200V180H160V160H180Z" />
+      <path d="M80 60H100V70H110V90H80V60ZM220 80V70H240V110H220V100H200V80H220Z" fill-opacity="0.6" />
+      <path d="M90 160V140H110V160H90Z" fill-opacity="0.6" />
+      <path d="M160 160V140H180V160H160Z" fill-opacity="0.6" />
     </svg>
+
   </footer>
   <script>
     const lis = document.querySelectorAll('li');
@@ -295,9 +304,93 @@
     });
 
     const time = document.querySelector('.time');
-    setInterval(() => {
-      time.textContent = new Date().toLocaleTimeString();
-    }, 1000);
+    setInterval(() => time.textContent = new Date().toLocaleTimeString(), 1000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.querySelector('.content-inner');
+      const originalBody = content.cloneNode(true);
+      const contentOut = document.querySelector('.content');
+      contentOut.innerHTML = "";
+
+      const cursor = document.createElement("span");
+      cursor.className = "typing";
+
+      function buildDomTree (node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          return { type: "text", content: node.textContent };
+        }
+
+        if (node.nodeType !== Node.ELEMENT_NODE) return null;
+
+        const obj = {
+          type: "element",
+          tag: node.tagName.toLowerCase(),
+          attributes: {},
+          children: []
+        };
+
+        for (const attr of node.attributes || []) {
+          obj.attributes[attr.name] = attr.value;
+        }
+
+        for (const child of node.childNodes) {
+          const childObj = buildDomTree(child);
+          if (childObj) obj.children.push(childObj);
+        }
+
+        return obj;
+      }
+
+      const domTree = buildDomTree(originalBody);
+      console.log(domTree)
+
+      function createDomNode (nodeObj, parent, callback) {
+        if (nodeObj.type === "text") {
+          typeText(parent, nodeObj.content, 0, callback);
+          return;
+        }
+
+        const element = document.createElement(nodeObj.tag);
+
+        for (const [key, value] of Object.entries(nodeObj.attributes)) {
+          element.setAttribute(key, value);
+        }
+
+        parent.appendChild(element);
+
+        let index = 0;
+        function nextChild () {
+          if (index < nodeObj.children.length) {
+            createDomNode(nodeObj.children[index], element, nextChild);
+            index++;
+          } else if (callback) {
+            callback();
+          }
+        }
+
+        nextChild();
+      }
+
+      function typeText (element, text, speed, callback) {
+        let index = 0;
+        const textNode = document.createTextNode("");
+        element.appendChild(textNode);
+        element.appendChild(cursor);
+
+        function type () {
+          if (index < text.length) {
+            textNode.textContent += text[index++] || '';
+            requestAnimationFrame(type);
+          } else {
+            if (callback) callback();
+          }
+        }
+
+        requestAnimationFrame(type);
+      }
+
+      createDomNode(domTree, contentOut);
+    });
   </script>
 </body>
 
