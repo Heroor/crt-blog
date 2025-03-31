@@ -1,9 +1,9 @@
 # CRT_BLOG
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/4d78bdc2-1ca9-433e-86ef-9c30183ca6ae">
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/384aa35f-f495-4450-b71c-788c176ade5d">
-  <img align="right" width="100" src="https://github.com/user-attachments/assets/384aa35f-f495-4450-b71c-788c176ade5d">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/1bc64a6b-6b53-4d18-ae86-b3c57e8da4df">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/d580d993-f14b-4fc2-b095-98708c33b8de">
+  <img align="right" width="100" src="https://github.com/user-attachments/assets/1bc64a6b-6b53-4d18-ae86-b3c57e8da4df">
 </picture>
 
 Welcome to CRT BLOG!
